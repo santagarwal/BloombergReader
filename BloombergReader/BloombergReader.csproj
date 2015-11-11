@@ -57,8 +57,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Model\Product.cs" />
-    <Compile Include="ViewModel\ProductViewModel.cs" />
+    <Compile Include="Model\Bar.cs" />
+    <Compile Include="ViewModel\BarViewModel.cs" />
     <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
