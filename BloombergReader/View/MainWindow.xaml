@@ -2,14 +2,40 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:BloombergReader.ViewModel"
-        Title="MainWindow">
+        Title="MainWindow"
+        WindowState="Maximized">
     <Window.DataContext>
         <local:BarViewModel/>
     </Window.DataContext>
     <Grid>
-        <ListView Name="ListViewBarDetails" ItemsSource="{Binding Bars}"  >
+        <!-- Grid mapping -->
+        <Grid.RowDefinitions>
+            <RowDefinition Name="gridMenu" Height="Auto"/>
+            <RowDefinition Name="gridTable" Height="1*"/>
+            <RowDefinition Name="BarChart" Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Icon="{StaticResource NewFile}" InputGestureText="Ctrl+N"></MenuItem>
+                <MenuItem Header="Open" Icon="{StaticResource OpenFile}" InputGestureText="Ctrl+O"></MenuItem>
+                <MenuItem Header="Save" Icon="{StaticResource SaveFile}" InputGestureText="Ctrl+S"></MenuItem>
+                <MenuItem Header="Save As..."></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Close"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="View Help"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="About BloombergReader"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Bars}"  >
             <ListView.View>
-                <GridView x:Name="gridViewBars">
+                <GridView>
                     <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Time}"/>
                     <GridViewColumn Header="Open" DisplayMemberBinding="{Binding Open}"/>
                     <GridViewColumn Header="High" DisplayMemberBinding="{Binding High}"/>
@@ -18,5 +44,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <Canvas Grid.Row="2" Background="Black" />
     </Grid>
 </Window>
