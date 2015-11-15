@@ -33,18 +33,8 @@
             </MenuItem>
         </Menu>
 
-        <ListView Grid.Row="1" ItemsSource="{Binding Bars}"  >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Time}"/>
-                    <GridViewColumn Header="Open" DisplayMemberBinding="{Binding Open}"/>
-                    <GridViewColumn Header="High" DisplayMemberBinding="{Binding High}"/>
-                    <GridViewColumn Header="Low" DisplayMemberBinding="{Binding Low}"/>
-                    <GridViewColumn Header="Close" DisplayMemberBinding="{Binding Close}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-
-        <Canvas Grid.Row="2" Background="Black" />
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Bars}" CanUserAddRows="False"/>
+        
+        <Canvas x:Name="BarsCanvas" Grid.Row="2" Background="#FFEEE08D" />
     </Grid>
 </Window>
