@@ -4,23 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
 using BloombergReader.Model;
+
 
 namespace BloombergReader.ViewModel
 {
     class BarViewModel
     {
-        private IList<Bar> _bars;
+        private ObservableCollection<Bar> _bars;
         public BarViewModel()
         {
-            _bars = new List<Bar>
+            _bars = new ObservableCollection<Bar>
             {
-                new Bar { Time = DateTime.Now, Open = 10, High = 20, Low = 5, Close = 6},
-                new Bar { Time = DateTime.Now, Open = 20, High = 23, Low = 6, Close = 8}
+                new Bar { Time = DateTime.Now, Open = 10, High = 200, Low = 5, Close = 60},
+                new Bar { Time = DateTime.Now, Open = 20, High = 230, Low = 6, Close = 80}
             };
         }
 
-        public IList<Bar> Bars
+        public ObservableCollection<Bar> Bars
         {
             get
             {

@@ -1,7 +1,8 @@
-﻿<Window x:Class="BloombergReader.View.MainWindow"
+﻿<Window x:Class="BloombergReader.View.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:BloombergReader.ViewModel"
+        xmlns:bloombergReader="clr-namespace:BloombergReader"
         Title="MainWindow"
         WindowState="Maximized">
     <Window.DataContext>
@@ -32,9 +33,17 @@
                 <MenuItem Header="About BloombergReader"></MenuItem>
             </MenuItem>
         </Menu>
-
-        <DataGrid Grid.Row="1" ItemsSource="{Binding Bars}" CanUserAddRows="False"/>
         
-        <Canvas x:Name="BarsCanvas" Grid.Row="2" Background="#FFEEE08D" />
+        
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Bars}" CanUserAddRows="False"/>
+
+        <ListBox Grid.Row="2" ItemsSource="{Binding Bars}">
+            <!--http://www.codeproject.com/Articles/18561/Custom-ListBox-Layout-in-WPF-->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <bloombergReader:BarCanvas IsItemsHost="True" Bars="{Binding Bars}"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </Window>
