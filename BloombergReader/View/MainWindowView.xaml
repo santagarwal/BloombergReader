@@ -34,16 +34,14 @@
             </MenuItem>
         </Menu>
         
-        
         <DataGrid Grid.Row="1" ItemsSource="{Binding Bars}" CanUserAddRows="False"/>
 
-        <ListBox Grid.Row="2" ItemsSource="{Binding Bars}">
-            <!--http://www.codeproject.com/Articles/18561/Custom-ListBox-Layout-in-WPF-->
-            <ListBox.ItemsPanel>
+        <ItemsControl Grid.Row="2" ItemsSource="{Binding}">
+            <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <bloombergReader:BarCanvas IsItemsHost="True" Bars="{Binding Bars}"/>
                 </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </Grid>
 </Window>
