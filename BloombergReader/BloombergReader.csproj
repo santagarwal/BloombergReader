@@ -54,14 +54,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\Shapes\BarShape.cs" />
     <Page Include="View\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Model\BarTypes.cs" />
     <Compile Include="View\Shapes\ArrowEnd.cs" />
     <Compile Include="View\Shapes\ArrowEnds.cs" />
     <Compile Include="View\Shapes\ArrowLineBase.cs" />
-    <Compile Include="BarCanvas.cs" />
+    <Compile Include="View\BarCanvas.cs" />
     <Compile Include="Model\Bar.cs" />
     <Compile Include="ViewModel\BarViewModel.cs" />
     <Compile Include="View\App.xaml.cs">

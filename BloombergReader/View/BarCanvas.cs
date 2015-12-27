@@ -14,8 +14,14 @@ using BloombergReader.ViewModel;
 using BloombergReader.View.Shapes;
 using System.Globalization;
 
-namespace BloombergReader
+namespace BloombergReader.View
 {
+    // https://zamjad.wordpress.com/2009/09/21/creating-dotplot-in-wpf-using-c/
+    // https://zamjad.wordpress.com/2010/03/18/creating-bar-graph-with-list-box/
+    // https://zamjad.wordpress.com/2010/05/04/creating-bar-graph-with-list-box-revisited/
+    // https://zamjad.wordpress.com/2011/11/27/creating-high-low-graph/
+
+
     public class BarCanvas : Canvas
     {
         private const double AxisThickness = 1;
@@ -38,24 +44,33 @@ namespace BloombergReader
         
         protected override void OnRender(DrawingContext dc)
         {
-            DrawСoordinateSystem(dc);
+            SolidColorBrush solidColorBrush = new SolidColorBrush();
+            solidColorBrush.Color = Colors.Black;
+            Pen pen = new Pen(solidColorBrush, AxisThickness);
+            pen.DashStyle = DashStyles.Solid;
+
+            DrawСoordinateSystem(dc, solidColorBrush, pen);
 
             // draw all bars
             for (int i=0; i<Bars.Count; i++)
             {
                 Bar bar = Bars[i];
 
-                // DrawBar(dc, i, 10, 10, bar);
+                BarShape barShape = new BarShape(bar.Open, bar.High, bar.Low, bar.Close);
+                // TODO: motherfucker
+                dc.DrawGeometry(solidColorBrush, pen, barShape.MyGeometry);
             }
+
         }
 
-        private void DrawСoordinateSystem(DrawingContext dc)
+        private void DrawСoordinateSystem(DrawingContext dc, SolidColorBrush solidColorBrush, Pen pen)
         {
-            SolidColorBrush solidColorBrush = new SolidColorBrush();
-            solidColorBrush.Color = Colors.Black;
-            Pen pen = new Pen(solidColorBrush, AxisThickness);
-            pen.DashStyle = DashStyles.Solid;
-    
+            ArrowLine xAsix = DefineXAxis();
+            ArrowLine yAsix = DefineYAxis();
+
+            dc.DrawGeometry(solidColorBrush, pen, xAsix.DefiningGeometry);
+            dc.DrawGeometry(solidColorBrush, pen, yAsix.DefiningGeometry);
+
             FormattedText priceText = new FormattedText(
                 "Price",
                 CultureInfo.InvariantCulture,
@@ -63,12 +78,6 @@ namespace BloombergReader
                 new Typeface("Verdana"),
                 AxisFontSize,
                 solidColorBrush);
-
-            ArrowLine xAsix = DefineXAxis();
-            ArrowLine yAsix = DefineYAxis();
-
-            dc.DrawGeometry(solidColorBrush, pen, xAsix.DefiningGeometry);
-            dc.DrawGeometry(solidColorBrush, pen, yAsix.DefiningGeometry);
 
             dc.DrawText(priceText, new Point(yAsix.X2 - priceText.Width / 2, yAsix.Y2 - priceText.Height));
         }

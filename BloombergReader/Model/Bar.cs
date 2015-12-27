@@ -37,5 +37,23 @@ namespace BloombergReader.Model
             get;
             internal set;
         }
+
+        public BarTypes BarType
+        {
+            get
+            {
+                if (Close > Open)
+                {
+                    return BarTypes.Bull;
+                }
+                
+                if (Close < Open)
+                {
+                    return BarTypes.Bear;
+                }
+
+                return BarTypes.NotDefined;
+            }
+        }
     }
 }
