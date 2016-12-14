@@ -5,7 +5,7 @@ using Owin;
 namespace BloombergReaderWeb.App_Start
 {
     // http://kristianguevara.net/creating-your-asp-net-mvc-5-application-from-scratch-for-beginners-using-entity-framework-6-and-identity-with-crud-functionalities/
-    // Adding Authentication Security and Unauthorized Page Placeholder
+    // Creating the Database using LocalDb
     public class Startup
     {
         public void Configuration(IAppBuilder app)

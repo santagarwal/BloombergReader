@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@model BloombergReaderWeb.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+@Html.ValidationSummary(true)
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <button type="submit">Log in</button>
+}
