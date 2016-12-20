@@ -5,7 +5,7 @@ using Owin;
 namespace BloombergReaderWeb.App_Start
 {
     // http://kristianguevara.net/creating-your-asp-net-mvc-5-application-from-scratch-for-beginners-using-entity-framework-6-and-identity-with-crud-functionalities/
-    // Creating the Database using LocalDb
+    // 10.3 Creating the query logic
     public class Startup
     {
         public void Configuration(IAppBuilder app)
