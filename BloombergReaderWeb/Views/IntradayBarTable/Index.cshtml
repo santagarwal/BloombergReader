@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        @model IEnumerable<BloombergReaderWeb.Models.Bar>
+        @{
+            ViewBag.Title = "Index";
+        }
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Date</th>
+                    <th style="text-align: center;">Open</th>
+                    <th style="text-align: center;">Close</th>
+                    <th style="text-align: center;">High</th>
+                    <th style="text-align: center;">Low</th>
+                    <th style="text-align: center;">Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Date)</td>
+                        <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Open)</td>
+                        <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Close)</td>
+                        <td style="text-align: center;">@Html.DisplayFor(modelItem => item.High)</td>
+                        <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Low)</td>
+                        <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Volume)</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </body>
+</html>
