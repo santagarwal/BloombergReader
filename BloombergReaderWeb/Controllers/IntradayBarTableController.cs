@@ -31,6 +31,15 @@ namespace BloombergReaderWeb.Controllers
                     High = 16.4m,
                     Low = 3.1m,
                     Volume = 18
+                },
+                new Bar()
+                {
+                    Date = DateTime.Now,
+                    Open = 13.3m,
+                    Close = 15.3m,
+                    High = 19.4m,
+                    Low = 3.2m,
+                    Volume = 19
                 }
             };
 

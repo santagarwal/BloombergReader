@@ -2,42 +2,50 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    
+    <title>@ViewBag.Title - BloombergReaderWeb</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
     <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
+        #header {
             background-color: #2A2CBF;
         }
-
-        li {
-            float: left;
+        
+        #header li a {
+            color: white;
         }
-
-            li a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 16px;
-                text-decoration: none;
-            }
-
-                li a:hover {
-                    background-color: #DEAB63;
-                }
+        
+        #header li a:hover {
+            background-color: #DEAB63;
+        }
+            
     </style>
 </head>
 <body>
-       
-    <ul>
-        <li><a href="~/Home/Index">Home</a></li>
-        <li><a href="~/IntradayBarTable/Index">IntradayBarTable</a></li>
-        <li><a href="~/About/Index">About</a></li>
-    </ul>
+
+    <div class="navbar navbar-fixed-top" id="header">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="~/Home/Index">Home</a></li>
+                <li><a href="~/IntradayBarTable/Index">IntradayBarTable</a></li>
+                <li><a href="~/About/Index">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container text-left">
+        <h1>@ViewBag.Title</h1>
+    </div>
+
     @RenderBody()
+
+    <div id="footer">
+        <div class="navbar navbar-inner navbar-fixed-bottom">
+            <p class="text-center">Copyright © 2016 Andrii Tkach. No rights reserved :)</p>
+        </div>
+    </div>
+
 </body>
 </html>
