@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title - BloombergReaderWeb</title>
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -20,11 +20,9 @@
         #header li a:hover {
             background-color: #DEAB63;
         }
-            
     </style>
 </head>
 <body>
-
     <div class="navbar navbar-fixed-top" id="header">
         <div class="container">
             <ul class="nav navbar-nav">
@@ -34,18 +32,18 @@
             </ul>
         </div>
     </div>
-
-    <div class="container text-left">
-        <h1>@ViewBag.Title</h1>
+    
+    <div class="container body-content text-left">
+        <h1>@ViewBag.Title</h1>    
+        @RenderBody()
     </div>
 
-    @RenderBody()
-
-    <div id="footer">
-        <div class="navbar navbar-inner navbar-fixed-bottom">
+    <div class="container navbar navbar-inner navbar-fixed-bottom">
+        <hr />
+        <footer>
             <p class="text-center">Copyright © 2016 Andrii Tkach. Some Rights Reserved :)</p>
-        </div>
+        </footer>
     </div>
-
+    
 </body>
 </html>
