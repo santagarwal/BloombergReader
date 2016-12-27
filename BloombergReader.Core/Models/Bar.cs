@@ -10,10 +10,5 @@ namespace BloombergReader.Core.Models
         public decimal Low { get; set; }
         public decimal Close { get; set; }
         public long Volume { get; set; }
-
-        public override string ToString()
-        {
-            return $"Date: {Date}; Open: {Open}; High: {High}; Low: {Low}; Close: {Close}; Volume: {Volume}";
-        }
     }
 }

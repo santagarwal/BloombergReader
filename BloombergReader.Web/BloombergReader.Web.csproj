@@ -196,6 +196,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntradayBarTableController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,7 +215,8 @@
     <Content Include="Views\Home\About.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\IntradayBarTable\Index.cshtml" />
+    <Content Include="Views\IntradayBarTable\IntradayBarTable.cshtml" />
+    <Content Include="Views\News\ReadNews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

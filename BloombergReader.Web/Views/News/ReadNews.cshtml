@@ -1,0 +1,62 @@
+﻿<!-- Proper Bootstrap usage -->
+
+<style>
+    .newsInput {
+         width: 250px;
+    }
+
+    nav {
+        float: left;
+        max-width: 160px;
+        margin: 0;
+        padding: 1em;
+    }
+
+    article {
+        margin-left: 270px;
+        padding: 1em;
+        overflow: hidden;
+    }
+</style>
+@model IEnumerable<BloombergReader.Core.Models.Story>
+@{
+    ViewBag.Title = "News";
+}
+<div class="container">
+    <nav>
+        <div class="form">
+            <form method="POST">
+                <!-- Headline -->
+                <div class="form-group">
+                    <label for="Headline">Headline</label>
+                    <div>
+                        <input class="newsInput" type="text" id="Headline" name="Headline" /><br>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="form-group">
+                    <label for="Text">Text</label><br>
+                    <div>
+                        <textarea class="newsInput" name="Text" rows="8"></textarea>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-group">
+                    <div>
+                        <button type="submit" class="btn btn-info">Add news</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <article>
+        @foreach (var item in Model)
+        {
+            <h3>@Html.DisplayFor(modelItem => item.Headline)</h3>
+            <p>@Html.DisplayFor(modelItem => item.Text)</p>
+        }
+</article>
+</div>

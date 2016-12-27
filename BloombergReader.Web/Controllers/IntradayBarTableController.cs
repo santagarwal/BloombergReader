@@ -10,7 +10,7 @@ namespace BloombergReader.Web.Controllers
     public class IntradayBarTableController : Controller
     {
         // GET: IntradayBarTable
-        public ActionResult Index()
+        public ActionResult IntradayBarTable()
         {
             Logger.Instance.InfoFormat(
                 @"Controller: {0}; ActionResult: {1}",
