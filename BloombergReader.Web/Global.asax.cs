@@ -8,6 +8,7 @@ namespace BloombergReader.Web
     {
         protected void Application_Start()
         {
+            // TODO: refactor to aspects
             Logger.Instance.Info("BloomberReader starting...");
 
             AreaRegistration.RegisterAllAreas();

@@ -224,6 +224,7 @@
     </Content>
     <Content Include="Views\IntradayBarTable\IntradayBarTable.cshtml" />
     <Content Include="Views\News\ReadNews.cshtml" />
+    <Content Include="Scripts\jQueryRotate-2.3.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

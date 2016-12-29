@@ -2,9 +2,41 @@
     ViewBag.Title = "Home";
 }
 
-<p>Welcome to BloombergReader website.</p>
+<div>
+    <p>Welcome to BloombergReader website.</p>
+    <p>Click on the rotating house.</p>
+</div>
+
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <img src="../images/Home.jpg" alt="Home" class="img-responsive" id="home">
     </div>
 </div>
+
+<script>
+
+    function speedIncrease() {
+        speed = speed * 3;
+    }
+
+    function speedReset() {
+        speed = initialSpeed;
+    }
+
+    var $img = $("#home"), i = 0, initialSpeed = 6, speed = initialSpeed;
+
+    setInterval(function () {
+        $img.rotate(i);
+        // we should make a circle
+        i = i + speed;
+    }, 1000);
+    
+    $img.click(function () {
+        speedIncrease();
+    });
+
+    $img.mouseout(function () {
+        speedReset();
+    });
+    
+</script>
