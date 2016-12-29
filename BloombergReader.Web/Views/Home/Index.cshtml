@@ -16,7 +16,7 @@
 <script>
 
     function speedIncrease() {
-        speed = speed * 3;
+        speed *= 3;
     }
 
     function speedReset() {
@@ -28,7 +28,7 @@
     setInterval(function () {
         $img.rotate(i);
         // we should make a circle
-        i = i + speed;
+        i += speed;
     }, 1000);
     
     $img.click(function () {
