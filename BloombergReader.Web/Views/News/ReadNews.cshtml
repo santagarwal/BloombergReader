@@ -26,11 +26,14 @@
             <!-- Buttons -->
             <div class="form-group">
                 <div>
-                    <button type="submit" class="btn btn-primary">Add news</button>
+                    <button type="submit" class="btn btn-primary btn-block" id="progressBtn" onclick="move()">
+                        <span class="glyphicon glyphicon-globe"></span> Add news
+                    </button>
                 </div>
             </div>
         </form>
     </div>
+    
     <div class="col-md-9">
         @foreach (var item in Model)
         {
@@ -39,3 +42,4 @@
         }
     </div>
 </div>
+
