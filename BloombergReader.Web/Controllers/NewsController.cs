@@ -23,6 +23,7 @@ namespace BloombergReader.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [LoggingFilter]
         public ActionResult ReadNews(Story story)
         {

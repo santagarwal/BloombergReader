@@ -1,5 +1,4 @@
-﻿<!-- Proper Bootstrap usage -->
-@model IEnumerable<BloombergReader.Core.Models.Story>
+﻿@model IEnumerable<BloombergReader.Core.Models.Story>
 @{
     ViewBag.Title = "News";
 }    
@@ -31,6 +30,9 @@
                     </button>
                 </div>
             </div>
+
+            @Html.AntiForgeryToken();
+
         </form>
     </div>
     
