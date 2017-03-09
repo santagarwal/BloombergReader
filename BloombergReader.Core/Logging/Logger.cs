@@ -1,9 +1,11 @@
-﻿using log4net.Config;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using log4net;
+using log4net.Config;
 
 namespace BloombergReader.Core.Logging
 {
@@ -12,20 +14,20 @@ namespace BloombergReader.Core.Logging
     /// </summary>
     public class Logger
     {
-        private static readonly log4net.ILog Log;
+        private static readonly ILog Log;
 
         private Logger() { }
 
         static Logger()
         {
             XmlConfigurator.Configure();
-            Log = log4net.LogManager.GetLogger(typeof(Logger));
+            Log = LogManager.GetLogger(typeof(Logger));
         }
 
         /// <summary>
         /// Instance of the class which can be accessed
         /// </summary>
-        public static log4net.ILog Instance
+        public static ILog Instance
         {
             get { return Log; }
         }

@@ -9,6 +9,7 @@ namespace BloombergReader.Web.Controllers
 {
     public class NewsController : Controller
     {
+        // TODO: implement a proper storage
         private static List<Story> _stories;
 
         static NewsController()

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<BloombergReader.Core.Models.Image>
+@{
+    ViewBag.Title = "Image gallery";
+}
+
+@section ImageGallery {
+    <link href="@Url.Content("~/Content/ImageGallery.css")" rel="stylesheet" type="text/css" />
+}
+
+@using (Html.BeginForm("Gallery",
+                        "Gallery",
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Upload Image:</label>
+    <input class="btn btn-default btn-file"  type="file" name="file" id="file" />
+    <input class="btn-primary"  type="submit" value="Upload Image" />
+    <br><br>
+    @ViewBag.Message
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="brGalleryImage">
+            <a target="_blank" href=@item.Path>
+                <img src=@Url.Content(item.Path) alt=@item.Path width="300" height="200">
+            </a>
+            <div class="brGalleryImageDesc">@item.Description</div>
+        </div>
+    }
+</div>

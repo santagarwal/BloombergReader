@@ -30,7 +30,6 @@ namespace BloombergReader.Core.BloombergRequests
         // TODO: refactor to knockoutjs in order to achive ObservableCollection functionality
         public IEnumerable<Bar> GetBars()
         {
-            // TODO: refactor to aspects    
             Logger.Instance.InfoFormat(@"Getting intraday bars for {0}", _security);
 
             var soptions = new SessionOptions

@@ -182,6 +182,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ImageGallery.css" />
+    <Content Include="Content\Layout.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -193,7 +195,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="images\Home.jpg" />
+    <Content Include="Images\Gallery\1.jpg" />
+    <Content Include="Images\Gallery\2.jpg" />
+    <Content Include="Images\Gallery\3.jpg" />
+    <Content Include="Images\Gallery\4.jpg" />
+    <Content Include="Images\Home\Home.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -205,6 +211,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntradayBarTableController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -214,7 +221,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -225,6 +234,7 @@
     <Content Include="Views\IntradayBarTable\IntradayBarTable.cshtml" />
     <Content Include="Views\News\ReadNews.cshtml" />
     <Content Include="Scripts\jQueryRotate-2.3.js" />
+    <Content Include="Views\Gallery\Gallery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

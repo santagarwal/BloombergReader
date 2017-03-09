@@ -1,0 +1,19 @@
+﻿#header {
+    background-color: #2A2CBF;
+}
+        
+#header li a {
+    color: white;
+}
+        
+#header li a:hover {
+    background-color: #DEAB63;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    background-color: #f5f5f5;
+}

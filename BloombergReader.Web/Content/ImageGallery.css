@@ -1,0 +1,22 @@
+﻿  div.brGalleryImage {
+        margin: 5px;
+        border: 1px solid #2A2CBF;
+        float: left;
+        width: 180px;
+        opacity:0.5;
+    }
+
+    div.brGalleryImage:hover {
+        border: 1px solid red;
+        opacity:1;
+    }
+
+    div.brGalleryImage img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.brGalleryImageDesc {
+        padding: 15px;
+        text-align: center;
+    }
