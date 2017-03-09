@@ -27,7 +27,7 @@ namespace BloombergReader.Web.Controllers
                 results.Add(new Image()
                 {
                     Path = fileUrl,
-                    Description = fileUrl
+                    Description = fileName
                 });
             }
 
