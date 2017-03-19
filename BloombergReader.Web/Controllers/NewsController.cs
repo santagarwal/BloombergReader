@@ -23,6 +23,7 @@ namespace BloombergReader.Web.Controllers
             return View(_stories);
         }
 
+        // TODO: Give the action more meaningfull name, i.e. use RedirectToAction acccordingly
         [HttpPost]
         [ValidateAntiForgeryToken]
         [LoggingFilter]

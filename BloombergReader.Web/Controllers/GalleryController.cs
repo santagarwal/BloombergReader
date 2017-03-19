@@ -40,6 +40,7 @@ namespace BloombergReader.Web.Controllers
             return View(GetImages());
         }
 
+        // TODO: Give the action more meaningfull name, i.e. use RedirectToAction acccordingly
         [LoggingFilter]
         [HttpPost]
         public ActionResult Gallery(HttpPostedFileBase file)
