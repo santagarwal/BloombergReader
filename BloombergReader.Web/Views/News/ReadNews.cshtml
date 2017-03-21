@@ -6,7 +6,11 @@
 <!-- TODO: Refactor to Razor Html.BeginForm-->
 <div class="row">
     <div class="form col-md-3">
-        <form method="POST">
+        @using (Html.BeginForm("AddNews",
+                                "News",
+                                FormMethod.Post,
+                                new { enctype = "multipart/form-data" }))
+        {
             <!-- Headline -->
             <div class="form-group">
                 <label class="label label-primary" for="Headline">Headline</label>
@@ -26,15 +30,14 @@
             <!-- Buttons -->
             <div class="form-group">
                 <div>
-                    <button type="submit" class="btn btn-primary btn-block" id="progressBtn" onclick="move()">
+                    <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
                         <span class="glyphicon glyphicon-globe"></span> Add news
                     </button>
                 </div>
             </div>
 
             @Html.AntiForgeryToken();
-
-        </form>
+        }
     </div>
     
     <div class="col-md-9">

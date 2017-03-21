@@ -16,9 +16,7 @@ namespace BloombergReader.Web.Controllers
         private IEnumerable<Image> GetImages()
         {
             var results = new List<Image>();
-
             string path = Server.MapPath(_serverUrl);
-
             foreach (var item in Directory.GetFiles(path))
             {
                 string fileName = Path.GetFileName(item);
@@ -40,16 +38,16 @@ namespace BloombergReader.Web.Controllers
             return View(GetImages());
         }
 
-        // TODO: Give the action more meaningfull name, i.e. use RedirectToAction acccordingly
         [LoggingFilter]
         [HttpPost]
-        public ActionResult Gallery(HttpPostedFileBase file)
+        public ActionResult UploadImage(HttpPostedFileBase file)
         {
             if (file != null && file.ContentLength > 0)
+            {
                 try
                 {
                     string path = Path.Combine(Server.MapPath(_serverUrl),
-                                               Path.GetFileName(file.FileName));
+                                                Path.GetFileName(file.FileName));
                     file.SaveAs(path);
                     ViewBag.Message = "File uploaded successfully";
                 }
@@ -57,12 +55,13 @@ namespace BloombergReader.Web.Controllers
                 {
                     ViewBag.Message = "ERROR:" + ex.Message.ToString();
                 }
+            }
             else
             {
                 ViewBag.Message = "You have not specified a file.";
             }
 
-            return View(GetImages());
+            return RedirectToAction("Gallery");
         }
     }
 }
